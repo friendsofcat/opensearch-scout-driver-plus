@@ -55,8 +55,6 @@ class SearchParametersBuilder
     private array $indicesBoost = [];
     private ?string $searchType;
     private ?string $preference;
-    private ?array $pointInTime;
-    private ?array $searchAfter;
     private ?array $routing;
 
     public function __construct(Model $model)
@@ -275,23 +273,6 @@ class SearchParametersBuilder
         return $this;
     }
 
-    public function pointInTime(string $pointInTimeId, ?string $keepAlive = null): self
-    {
-        $this->pointInTime = ['id' => $pointInTimeId];
-
-        if (isset($keepAlive)) {
-            $this->pointInTime['keep_alive'] = $keepAlive;
-        }
-
-        return $this;
-    }
-
-    public function searchAfter(array $searchAfter): self
-    {
-        $this->searchAfter = $searchAfter;
-        return $this;
-    }
-
     public function routing(array $routing): self
     {
         $this->routing = $routing;
@@ -301,19 +282,14 @@ class SearchParametersBuilder
     public function buildSearchParameters(): SearchParameters
     {
         $searchParameters = new SearchParameters();
+        $searchParameters->indices($this->indexNames);
 
-        if (isset($this->pointInTime)) {
-            $searchParameters->pointInTime($this->pointInTime);
-        } else {
-            $searchParameters->indices($this->indexNames);
+        if (isset($this->preference)) {
+            $searchParameters->preference($this->preference);
+        }
 
-            if (isset($this->preference)) {
-                $searchParameters->preference($this->preference);
-            }
-
-            if (isset($this->routing)) {
-                $searchParameters->routing($this->routing);
-            }
+        if (isset($this->routing)) {
+            $searchParameters->routing($this->routing);
         }
 
         if (isset($this->query)) {
@@ -378,10 +354,6 @@ class SearchParametersBuilder
 
         if (isset($this->searchType)) {
             $searchParameters->searchType($this->searchType);
-        }
-
-        if (isset($this->searchAfter)) {
-            $searchParameters->searchAfter($this->searchAfter);
         }
 
         return $searchParameters;

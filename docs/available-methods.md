@@ -7,7 +7,6 @@
 * [join](#join)
 * [load](#load)
 * [minScore](#minscore)
-* [pointInTime](#pointintime)
 * [postFilter](#postfilter)
 * [preference](#preference)
 * [refineModels](#refinemodels)
@@ -197,22 +196,6 @@ $searchResult = Book::searchQuery($query)
     ->execute();
 ```
 
-### pointInTime
-
-`pointInTime` allows you to set a [point in time](https://www.elastic.co/guide/en/elasticsearch/reference/current/point-in-time-api.html#point-in-time-api) 
-that should be used for the search:
-
-```php
-$pit = Book::openPointInTime('1m');
-
-$searchResult = Book::searchQuery($query)
-    ->pointInTime($pit, '5m')
-    ->execute();
-```
-
-**Note**, that [join](#join), [preference](#preference) and [routing](#routing) parameters are ignored 
-when `pointInTime` is used.
-
 ### postFilter
 
 `postFilter` is used to [filter search results](https://www.elastic.co/guide/en/elasticsearch/reference/current/filter-search-results.html#post-filter):
@@ -325,23 +308,6 @@ This method allows you to [search with custom routing](https://www.elastic.co/gu
 ```php
 $searchResult = Book::searchQuery($query)
     ->routing(['author1', 'author2'])
-    ->execute();
-```
-
-### searchAfter
-
-You can use `searchAfter` [to retrieve the next page of hits using a set of sort values from the previous page](https://www.elastic.co/guide/en/elasticsearch/reference/current/paginate-search-results.html#search-after):
-
-```php
-$firstPage = Book::searchQuery($query)
-    ->pointInTime($pit)
-    ->execute();
-
-$searchAfter = $firstPage->hits()->last()->sort();
-
-$secondPage = Book::searchQuery($query)
-    ->pointInTime($pit)
-    ->searchAfter($searchAfter)
     ->execute();
 ```
 
