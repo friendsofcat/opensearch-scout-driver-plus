@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\AnalyzerParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\FieldParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\QueryStringParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\SlopParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\ZeroTermsQueryParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\AnalyzerParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\FieldParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\QueryStringParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\SlopParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\ZeroTermsQueryParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
 
 final class MatchPhraseQueryBuilder extends AbstractParameterizedQueryBuilder
 {

@@ -26,7 +26,7 @@
 
 ### aggregate
 
-This method can be used to [aggregate data](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) 
+This method can be used to [aggregate data](https://opensearch.org/docs/1.3/opensearch/aggregations/) 
 based on a search query;
 
 ```php

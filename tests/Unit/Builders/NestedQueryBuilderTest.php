@@ -1,19 +1,19 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\Builders;
 
-use Elastic\ScoutDriverPlus\Builders\NestedQueryBuilder;
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\Builders\NestedQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Builders\NestedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\NestedQueryBuilder
  *
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
  */
 final class NestedQueryBuilderTest extends TestCase
 {

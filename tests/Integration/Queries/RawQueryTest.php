@@ -1,39 +1,39 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Queries;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Queries;
 
 use Carbon\Carbon;
-use Elastic\Adapter\Documents\Document;
-use Elastic\Adapter\Search\Highlight;
-use Elastic\ScoutDriverPlus\Decorators\Hit;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\App\Model;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 use Illuminate\Support\Facades\Cache;
+use OpenSearch\Adapter\Documents\Document;
+use OpenSearch\Adapter\Search\Highlight;
+use OpenSearch\ScoutDriverPlus\Decorators\Hit;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\App\Model;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 use RuntimeException;
 use const SORT_NUMERIC;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder
- * @covers \Elastic\ScoutDriverPlus\Engine
- * @covers \Elastic\ScoutDriverPlus\Factories\LazyModelFactory
- * @covers \Elastic\ScoutDriverPlus\Factories\ModelFactory
- * @covers \Elastic\ScoutDriverPlus\Support\Query
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Engine
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\ModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Query
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Hit
- * @uses   \Elastic\ScoutDriverPlus\Decorators\SearchResult
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Suggestion
- * @uses   \Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses   \Elastic\ScoutDriverPlus\Paginator
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Hit
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\SearchResult
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Suggestion
+ * @uses   \OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Paginator
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class RawQueryTest extends TestCase
 {

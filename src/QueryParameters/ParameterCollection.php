@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\QueryParameters;
+namespace OpenSearch\ScoutDriverPlus\QueryParameters;
 
-use Elastic\ScoutDriverPlus\Support\Arr;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Collection as BaseCollection;
+use OpenSearch\ScoutDriverPlus\Support\Arr;
 
 final class ParameterCollection implements Arrayable
 {

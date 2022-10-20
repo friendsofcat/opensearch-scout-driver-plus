@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
 use Closure;
 use Illuminate\Database\Eloquent\Builder;

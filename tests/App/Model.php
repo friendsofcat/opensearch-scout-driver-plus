@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\App;
+namespace OpenSearch\ScoutDriverPlus\Tests\App;
 
-use Elastic\ScoutDriverPlus\Searchable;
 use Illuminate\Database\Eloquent\Model as BaseModel;
+use OpenSearch\ScoutDriverPlus\Searchable;
 
 abstract class Model extends BaseModel
 {

@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
 use Closure;
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\ScoutDriverPlus\Decorators\SearchResult;
-use Elastic\ScoutDriverPlus\Engine;
-use Elastic\ScoutDriverPlus\Exceptions\ModelNotJoinedException;
-use Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
-use Elastic\ScoutDriverPlus\Factories\ParameterFactory;
-use Elastic\ScoutDriverPlus\Paginator;
-use Elastic\ScoutDriverPlus\Searchable;
-use Elastic\ScoutDriverPlus\Support\Arr;
-use Elastic\ScoutDriverPlus\Support\Conditionable;
 use Illuminate\Database\Eloquent\Model;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\ScoutDriverPlus\Decorators\SearchResult;
+use OpenSearch\ScoutDriverPlus\Engine;
+use OpenSearch\ScoutDriverPlus\Exceptions\ModelNotJoinedException;
+use OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
+use OpenSearch\ScoutDriverPlus\Factories\ParameterFactory;
+use OpenSearch\ScoutDriverPlus\Paginator;
+use OpenSearch\ScoutDriverPlus\Searchable;
+use OpenSearch\ScoutDriverPlus\Support\Arr;
+use OpenSearch\ScoutDriverPlus\Support\Conditionable;
 use stdClass;
 
 class SearchParametersBuilder

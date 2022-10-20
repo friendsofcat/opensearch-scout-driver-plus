@@ -1,26 +1,26 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Factories;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Factories;
 
-use Elastic\Adapter\Search\SearchResult;
-use Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder;
-use Elastic\ScoutDriverPlus\Factories\LazyModelFactory;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
 use Illuminate\Database\Connection;
 use Illuminate\Support\Facades\DB;
+use OpenSearch\Adapter\Search\SearchResult;
+use OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Factories\LazyModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Engine
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\ModelFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Engine
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ModelFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class LazyModelFactoryTest extends TestCase
 {

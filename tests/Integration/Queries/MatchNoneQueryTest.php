@@ -1,29 +1,29 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Queries;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Queries;
 
-use Elastic\Adapter\Search\Suggestion;
-use Elastic\ScoutDriverPlus\Support\Query;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\Adapter\Search\Suggestion;
+use OpenSearch\ScoutDriverPlus\Support\Query;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\MatchNoneQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Engine
- * @covers \Elastic\ScoutDriverPlus\Factories\LazyModelFactory
- * @covers \Elastic\ScoutDriverPlus\Factories\ModelFactory
- * @covers \Elastic\ScoutDriverPlus\Support\Query
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\MatchNoneQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Engine
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\ModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Query
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Hit
- * @uses   \Elastic\ScoutDriverPlus\Decorators\SearchResult
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Suggestion
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Hit
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\SearchResult
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Suggestion
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class MatchNoneQueryTest extends TestCase
 {

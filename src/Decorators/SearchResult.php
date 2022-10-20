@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Decorators;
+namespace OpenSearch\ScoutDriverPlus\Decorators;
 
 use ArrayIterator;
-use Elastic\Adapter\Search\Hit as BaseHit;
-use Elastic\Adapter\Search\SearchResult as BaseSearchResult;
-use Elastic\Adapter\Search\Suggestion as BaseSuggestion;
-use Elastic\ScoutDriverPlus\Factories\LazyModelFactory;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Collection as BaseCollection;
 use Illuminate\Support\Traits\ForwardsCalls;
 use IteratorAggregate;
+use OpenSearch\Adapter\Search\Hit as BaseHit;
+use OpenSearch\Adapter\Search\SearchResult as BaseSearchResult;
+use OpenSearch\Adapter\Search\Suggestion as BaseSuggestion;
+use OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
 use Traversable;
 
 /**

@@ -1,24 +1,6 @@
-<p align="center">
-    <img width="400px" src="logo.gif">
-</p>
+# OpenSearch Elastic Scout Driver Plus
 
-<p align="center">
-    <a href="https://packagist.org/packages/babenkoivan/elastic-scout-driver-plus"><img src="https://poser.pugx.org/babenkoivan/elastic-scout-driver-plus/v/stable"></a>
-    <a href="https://packagist.org/packages/babenkoivan/elastic-scout-driver-plus"><img src="https://poser.pugx.org/babenkoivan/elastic-scout-driver-plus/downloads"></a>
-    <a href="https://packagist.org/packages/babenkoivan/elastic-scout-driver-plus"><img src="https://poser.pugx.org/babenkoivan/elastic-scout-driver-plus/license"></a>
-    <a href="https://github.com/babenkoivan/elastic-scout-driver-plus/actions?query=workflow%3ATests"><img src="https://github.com/babenkoivan/elastic-scout-driver-plus/workflows/Tests/badge.svg"></a>
-    <a href="https://github.com/babenkoivan/elastic-scout-driver-plus/actions?query=workflow%3A%22Code+style%22"><img src="https://github.com/babenkoivan/elastic-scout-driver-plus/workflows/Code%20style/badge.svg"></a>
-    <a href="https://github.com/babenkoivan/elastic-scout-driver-plus/actions?query=workflow%3A%22Static+analysis%22"><img src="https://github.com/babenkoivan/elastic-scout-driver-plus/workflows/Static%20analysis/badge.svg"></a>
-    <a href="https://paypal.me/babenkoi"><img src="https://img.shields.io/badge/donate-paypal-blue"></a>
-</p>
-
-<p align="center">
-    <a href="https://ko-fi.com/ivanbabenko" target="_blank"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support the project!"></a>
-</p>
-
----
-
-Extension for [Elastic Scout Driver](https://github.com/babenkoivan/elastic-scout-driver).
+Extension for [Elastic Scout Driver](https://github.com/friendsofcat/opensearch-scout-driver).
 
 ## Contents
 
@@ -35,7 +17,7 @@ Extension for [Elastic Scout Driver](https://github.com/babenkoivan/elastic-scou
 
 ## Features
 
-Elastic Scout Driver Plus supports:
+OpenSearch Scout Driver Plus supports:
 
 * [Aggregations](docs/available-methods.md#aggregate)
 * [Custom routing](#custom-routing)
@@ -48,10 +30,10 @@ Elastic Scout Driver Plus supports:
 
 ## Compatibility
 
-The current version of Elastic Scout Driver Plus has been tested with the following configuration:
+The current version of OpenSearch Scout Driver Plus has been tested with the following configuration:
 
 * PHP 7.4-8.0
-* Elasticsearch 8.x
+* OpenSearch 1.x
 * Laravel 7.x-9.x
 * Laravel Scout 7.x-9.x
 
@@ -60,22 +42,22 @@ The current version of Elastic Scout Driver Plus has been tested with the follow
 The library can be installed via Composer:
 
 ```bash
-composer require babenkoivan/elastic-scout-driver-plus
+composer require friendsofcat/opensearch-scout-driver-plus
 ```
 
-**Note** that this library doesn't work without Elastic Scout Driver. If it's not installed yet, please follow
-the installation steps described [here](https://github.com/babenkoivan/elastic-scout-driver#installation). If you
-already use Elastic Scout Driver, I recommend you to update it before installing Elastic Scout Driver Plus:
+**Note** that this library doesn't work without OpenSearch Scout Driver. If it's not installed yet, please follow
+the installation steps described [here](https://github.com/friendsofcat/opensearch-scout-driver#installation). If you
+already use OpenSearch Scout Driver, I recommend you to update it before installing OpenSearch Scout Driver Plus:
 
 ```bash
-composer update babenkoivan/elastic-scout-driver
+composer update friendsofcat/opensearch-scout-driver
 ```
 
-After installing the libraries, you need to add `Elastic\ScoutDriverPlus\Searchable` trait to your models. In case 
+After installing the libraries, you need to add `OpenSearch\ScoutDriverPlus\Searchable` trait to your models. In case 
 some models already use the standard `Laravel\Scout\Searchable` trait, you should replace it with the one provided by 
-Elastic Scout Driver Plus.
+OpenSearch Scout Driver Plus.
 
-If you want to use Elastic Scout Driver Plus with [Lumen framework](https://lumen.laravel.com/)
+If you want to use OpenSearch Scout Driver Plus with [Lumen framework](https://lumen.laravel.com/)
 refer to [this guide](https://github.com/babenkoivan/elastic-scout-driver-plus/wiki/Lumen-Installation).
 
 ## Usage
@@ -86,7 +68,7 @@ Before you begin searching a model, you should define a query. You can either us
 with an array:
 
 ```php
-use Elastic\ScoutDriverPlus\Support\Query;
+use OpenSearch\ScoutDriverPlus\Support\Query;
 
 // using a query builder
 $query = Query::match()
@@ -105,7 +87,7 @@ $query = [
 ];
 ```
 
-Each method of `Elastic\ScoutDriverPlus\Support\Query` factory creates a query builder for the respective type. 
+Each method of `OpenSearch\ScoutDriverPlus\Support\Query` factory creates a query builder for the respective type. 
 Available methods are listed below:
 
 * [bool](docs/compound-queries.md#boolean)
@@ -192,7 +174,7 @@ for your model, override the `searchableRouting` method:
 ```php
 class Book extends Model
 {
-    use Elastic\ScoutDriverPlus\Searchable;
+    use OpenSearch\ScoutDriverPlus\Searchable;
     
     public function searchableRouting()
     {
@@ -210,7 +192,7 @@ Sometimes you need to index your model with related data:
 ```php
 class Book extends Model
 {
-    use Elastic\ScoutDriverPlus\Searchable;
+    use OpenSearch\ScoutDriverPlus\Searchable;
     
     public function toSearchableArray()
     {
@@ -228,7 +210,7 @@ You can improve the performance of bulk operations by overriding the `searchable
 ```php
 class Book extends Model
 {
-    use Elastic\ScoutDriverPlus\Searchable;
+    use OpenSearch\ScoutDriverPlus\Searchable;
     
     public function toSearchableArray()
     {
@@ -251,13 +233,13 @@ In case you are looking for a way to preload relations for models matching a sea
 
 ### Multiple Connections
 
-You can configure multiple connections to Elasticsearch in the [client's configuration file](https://github.com/babenkoivan/elastic-client/tree/master#configuration).
+You can configure multiple connections to OpenSearch in the [client's configuration file](https://github.com/friendsofcat/opensearch-client/tree/master#configuration).
 If you want to change a connection used by a model, you need to override the `searchableConnection` method:
 
 ```php
 class Book extends Model
 {
-    use Elastic\ScoutDriverPlus\Searchable;
+    use OpenSearch\ScoutDriverPlus\Searchable;
     
     public function searchableConnection(): ?string
     {

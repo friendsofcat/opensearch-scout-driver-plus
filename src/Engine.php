@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus;
+namespace OpenSearch\ScoutDriverPlus;
 
-use Elastic\Adapter\Documents\DocumentManager;
-use Elastic\Adapter\Indices\IndexManager;
-use Elastic\Adapter\Search\PointInTimeManager;
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\Adapter\Search\SearchResult;
-use Elastic\ScoutDriver\Engine as BaseEngine;
-use Elastic\ScoutDriver\Factories\DocumentFactoryInterface;
-use Elastic\ScoutDriver\Factories\ModelFactoryInterface;
-use Elastic\ScoutDriver\Factories\SearchParametersFactoryInterface;
-use Elastic\ScoutDriverPlus\Factories\RoutingFactoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use OpenSearch\Adapter\Documents\DocumentManager;
+use OpenSearch\Adapter\Indices\IndexManager;
+use OpenSearch\Adapter\Search\PointInTimeManager;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\Adapter\Search\SearchResult;
+use OpenSearch\ScoutDriver\Engine as BaseEngine;
+use OpenSearch\ScoutDriver\Factories\DocumentFactoryInterface;
+use OpenSearch\ScoutDriver\Factories\ModelFactoryInterface;
+use OpenSearch\ScoutDriver\Factories\SearchParametersFactoryInterface;
+use OpenSearch\ScoutDriverPlus\Factories\RoutingFactoryInterface;
 
 class Engine extends BaseEngine
 {

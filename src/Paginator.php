@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus;
+namespace OpenSearch\ScoutDriverPlus;
 
-use Elastic\ScoutDriverPlus\Decorators\SearchResult;
 use Illuminate\Pagination\LengthAwarePaginator;
+use OpenSearch\ScoutDriverPlus\Decorators\SearchResult;
 use RuntimeException;
 
 /**

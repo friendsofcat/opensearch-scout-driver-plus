@@ -1,14 +1,15 @@
 <?php declare(strict_types=1);
 
-use Elastic\Adapter\Indices\Mapping;
-use Elastic\Adapter\Indices\Settings;
-use Elastic\Migrations\Facades\Index;
-use Elastic\Migrations\MigrationInterface;
+use OpenSearch\Adapter\Indices\Mapping;
+use OpenSearch\Adapter\Indices\Settings;
+use OpenSearch\Migrations\Facades\Index;
+use OpenSearch\Migrations\MigrationInterface;
 
 final class CreateBooksIndex implements MigrationInterface
 {
     public function up(): void
     {
+        Index::dropIfExists('books');
         Index::create('books', static function (Mapping $mapping, Settings $settings) {
             $mapping->integer('id');
             $mapping->integer('author_id');

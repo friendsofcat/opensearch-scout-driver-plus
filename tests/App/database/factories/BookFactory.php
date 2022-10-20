@@ -1,10 +1,10 @@
 <?php declare(strict_types=1);
 
 use Carbon\Carbon;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
 
 /** @var Factory $factory */
 $factory->define(Book::class, static fn (Faker $faker) => [

@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Factories;
+namespace OpenSearch\ScoutDriverPlus\Factories;
 
-use Elastic\Adapter\Documents\Routing;
 use Illuminate\Support\Collection;
+use OpenSearch\Adapter\Documents\Routing;
 
 interface RoutingFactoryInterface
 {

@@ -1,12 +1,12 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\Support;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\Support;
 
-use Elastic\ScoutDriverPlus\Support\Arr;
+use OpenSearch\ScoutDriverPlus\Support\Arr;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Support\Arr
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Arr
  */
 final class ArrTest extends TestCase
 {

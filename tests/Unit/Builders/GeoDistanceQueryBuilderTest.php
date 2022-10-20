@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\Builders;
 
-use Elastic\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder;
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder
  *
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\CallbackArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\CallbackArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
  */
 final class GeoDistanceQueryBuilderTest extends TestCase
 {

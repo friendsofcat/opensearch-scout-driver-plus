@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\QueryParameters\Validators;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\QueryParameters\Validators;
 
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\CompoundValidator;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\CompoundValidator;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\QueryParameters\Validators\CompoundValidator
+ * @covers \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\CompoundValidator
  *
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator
  */
 final class CompoundValidatorTest extends TestCase
 {

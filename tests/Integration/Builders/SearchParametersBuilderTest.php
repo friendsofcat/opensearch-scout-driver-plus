@@ -1,24 +1,24 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Builders;
 
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder;
-use Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder;
+use OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder
- * @covers \Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException
- * @covers \Elastic\ScoutDriverPlus\Support\Conditionable
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Conditionable
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Engine
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Engine
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class SearchParametersBuilderTest extends TestCase
 {

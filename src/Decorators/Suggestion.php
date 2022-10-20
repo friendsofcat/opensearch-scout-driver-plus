@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Decorators;
+namespace OpenSearch\ScoutDriverPlus\Decorators;
 
-use Elastic\Adapter\Search\Suggestion as BaseSuggestion;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Traits\ForwardsCalls;
+use OpenSearch\Adapter\Search\Suggestion as BaseSuggestion;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
 
 /**
  * @mixin BaseSuggestion

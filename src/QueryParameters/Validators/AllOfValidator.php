@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\QueryParameters\Validators;
+namespace OpenSearch\ScoutDriverPlus\QueryParameters\Validators;
 
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
 
 final class AllOfValidator implements ValidatorInterface
 {

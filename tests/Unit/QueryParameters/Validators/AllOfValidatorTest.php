@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\QueryParameters\Validators;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\QueryParameters\Validators;
 
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @covers \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
  *
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
  */
 final class AllOfValidatorTest extends TestCase
 {
