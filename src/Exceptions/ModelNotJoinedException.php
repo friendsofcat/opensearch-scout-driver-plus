@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Exceptions;
+namespace OpenSearch\ScoutDriverPlus\Exceptions;
 
-use Elastic\Transport\Exception\InvalidArgumentException;
+use OpenSearch\Common\Exceptions\InvalidArgumentException;
 
 final class ModelNotJoinedException extends InvalidArgumentException
 {

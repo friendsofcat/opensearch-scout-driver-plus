@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Factories;
+namespace OpenSearch\ScoutDriverPlus\Factories;
 
 use Closure;
-use Elastic\ScoutDriverPlus\Builders\QueryBuilderInterface;
+use OpenSearch\ScoutDriverPlus\Builders\QueryBuilderInterface;
 
 class ParameterFactory
 {

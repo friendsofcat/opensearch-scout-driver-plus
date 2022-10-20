@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\Factories;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\Factories;
 
-use Elastic\ScoutDriverPlus\Builders\MatchAllQueryBuilder;
-use Elastic\ScoutDriverPlus\Factories\ParameterFactory;
+use OpenSearch\ScoutDriverPlus\Builders\MatchAllQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Factories\ParameterFactory;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Factories\ParameterFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\MatchAllQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\MatchAllQueryBuilder
  */
 final class ParameterFactoryTest extends TestCase
 {

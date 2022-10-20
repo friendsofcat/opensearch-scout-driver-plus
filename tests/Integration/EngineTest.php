@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration;
 
-use Elastic\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Engine
- * @covers \Elastic\ScoutDriverPlus\Jobs\RemoveFromSearch
+ * @covers \OpenSearch\ScoutDriverPlus\Engine
+ * @covers \OpenSearch\ScoutDriverPlus\Jobs\RemoveFromSearch
  *
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class EngineTest extends TestCase
 {
@@ -66,13 +66,5 @@ final class EngineTest extends TestCase
         // assert that there are no documents in the index
         $found = Book::search()->get();
         $this->assertSame(0, $found->count());
-    }
-
-    public function test_point_in_time_can_be_opened_and_closed(): void
-    {
-        $pit = Book::openPointInTime('1m');
-        $this->assertNotNull($pit);
-
-        Book::closePointInTime($pit);
     }
 }

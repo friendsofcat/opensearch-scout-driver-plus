@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
 use Closure;
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\ScoutDriverPlus\Decorators\SearchResult;
-use Elastic\ScoutDriverPlus\Engine;
-use Elastic\ScoutDriverPlus\Exceptions\ModelNotJoinedException;
-use Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
-use Elastic\ScoutDriverPlus\Factories\ParameterFactory;
-use Elastic\ScoutDriverPlus\Paginator;
-use Elastic\ScoutDriverPlus\Searchable;
-use Elastic\ScoutDriverPlus\Support\Arr;
-use Elastic\ScoutDriverPlus\Support\Conditionable;
 use Illuminate\Database\Eloquent\Model;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\ScoutDriverPlus\Decorators\SearchResult;
+use OpenSearch\ScoutDriverPlus\Engine;
+use OpenSearch\ScoutDriverPlus\Exceptions\ModelNotJoinedException;
+use OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
+use OpenSearch\ScoutDriverPlus\Factories\ParameterFactory;
+use OpenSearch\ScoutDriverPlus\Paginator;
+use OpenSearch\ScoutDriverPlus\Searchable;
+use OpenSearch\ScoutDriverPlus\Support\Arr;
+use OpenSearch\ScoutDriverPlus\Support\Conditionable;
 use stdClass;
 
 class SearchParametersBuilder
@@ -55,8 +55,6 @@ class SearchParametersBuilder
     private array $indicesBoost = [];
     private ?string $searchType;
     private ?string $preference;
-    private ?array $pointInTime;
-    private ?array $searchAfter;
     private ?array $routing;
 
     public function __construct(Model $model)
@@ -275,23 +273,6 @@ class SearchParametersBuilder
         return $this;
     }
 
-    public function pointInTime(string $pointInTimeId, ?string $keepAlive = null): self
-    {
-        $this->pointInTime = ['id' => $pointInTimeId];
-
-        if (isset($keepAlive)) {
-            $this->pointInTime['keep_alive'] = $keepAlive;
-        }
-
-        return $this;
-    }
-
-    public function searchAfter(array $searchAfter): self
-    {
-        $this->searchAfter = $searchAfter;
-        return $this;
-    }
-
     public function routing(array $routing): self
     {
         $this->routing = $routing;
@@ -301,19 +282,14 @@ class SearchParametersBuilder
     public function buildSearchParameters(): SearchParameters
     {
         $searchParameters = new SearchParameters();
+        $searchParameters->indices($this->indexNames);
 
-        if (isset($this->pointInTime)) {
-            $searchParameters->pointInTime($this->pointInTime);
-        } else {
-            $searchParameters->indices($this->indexNames);
+        if (isset($this->preference)) {
+            $searchParameters->preference($this->preference);
+        }
 
-            if (isset($this->preference)) {
-                $searchParameters->preference($this->preference);
-            }
-
-            if (isset($this->routing)) {
-                $searchParameters->routing($this->routing);
-            }
+        if (isset($this->routing)) {
+            $searchParameters->routing($this->routing);
         }
 
         if (isset($this->query)) {
@@ -378,10 +354,6 @@ class SearchParametersBuilder
 
         if (isset($this->searchType)) {
             $searchParameters->searchType($this->searchType);
-        }
-
-        if (isset($this->searchAfter)) {
-            $searchParameters->searchAfter($this->searchAfter);
         }
 
         return $searchParameters;

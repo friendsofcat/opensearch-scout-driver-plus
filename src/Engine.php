@@ -1,28 +1,25 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus;
+namespace OpenSearch\ScoutDriverPlus;
 
-use Elastic\Adapter\Documents\DocumentManager;
-use Elastic\Adapter\Indices\IndexManager;
-use Elastic\Adapter\Search\PointInTimeManager;
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\Adapter\Search\SearchResult;
-use Elastic\ScoutDriver\Engine as BaseEngine;
-use Elastic\ScoutDriver\Factories\DocumentFactoryInterface;
-use Elastic\ScoutDriver\Factories\ModelFactoryInterface;
-use Elastic\ScoutDriver\Factories\SearchParametersFactoryInterface;
-use Elastic\ScoutDriverPlus\Factories\RoutingFactoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use OpenSearch\Adapter\Documents\DocumentManager;
+use OpenSearch\Adapter\Indices\IndexManager;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\Adapter\Search\SearchResult;
+use OpenSearch\ScoutDriver\Engine as BaseEngine;
+use OpenSearch\ScoutDriver\Factories\DocumentFactoryInterface;
+use OpenSearch\ScoutDriver\Factories\ModelFactoryInterface;
+use OpenSearch\ScoutDriver\Factories\SearchParametersFactoryInterface;
+use OpenSearch\ScoutDriverPlus\Factories\RoutingFactoryInterface;
 
 class Engine extends BaseEngine
 {
     private RoutingFactoryInterface $routingFactory;
-    private PointInTimeManager $pointInTimeManager;
 
     public function __construct(
         DocumentManager $documentManager,
         IndexManager $indexManager,
-        PointInTimeManager $pointInTimeManager,
         DocumentFactoryInterface $documentFactory,
         SearchParametersFactoryInterface $searchParametersFactory,
         ModelFactoryInterface $modelFactory,
@@ -31,7 +28,6 @@ class Engine extends BaseEngine
         parent::__construct($documentManager, $documentFactory, $searchParametersFactory, $modelFactory, $indexManager);
 
         $this->routingFactory = $routingFactory;
-        $this->pointInTimeManager = $pointInTimeManager;
     }
 
     /**
@@ -77,15 +73,5 @@ class Engine extends BaseEngine
         $self->documentManager = $self->documentManager->connection($connection);
         $self->indexManager = $self->indexManager->connection($connection);
         return $self;
-    }
-
-    public function openPointInTime(string $indexName, ?string $keepAlive = null): string
-    {
-        return $this->pointInTimeManager->open($indexName, $keepAlive);
-    }
-
-    public function closePointInTime(string $pointInTimeId): void
-    {
-        $this->pointInTimeManager->close($pointInTimeId);
     }
 }

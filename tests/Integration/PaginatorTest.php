@@ -1,23 +1,23 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration;
 
-use Elastic\Adapter\Documents\Document;
-use Elastic\Adapter\Search\SearchResult as BaseSearchResult;
-use Elastic\ScoutDriverPlus\Decorators\Hit;
-use Elastic\ScoutDriverPlus\Decorators\SearchResult;
-use Elastic\ScoutDriverPlus\Factories\ModelFactory;
-use Elastic\ScoutDriverPlus\Paginator;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\App\Model;
 use Illuminate\Database\Eloquent\Collection;
+use OpenSearch\Adapter\Documents\Document;
+use OpenSearch\Adapter\Search\SearchResult as BaseSearchResult;
+use OpenSearch\ScoutDriverPlus\Decorators\Hit;
+use OpenSearch\ScoutDriverPlus\Decorators\SearchResult;
+use OpenSearch\ScoutDriverPlus\Factories\ModelFactory;
+use OpenSearch\ScoutDriverPlus\Paginator;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\App\Model;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Paginator
+ * @covers \OpenSearch\ScoutDriverPlus\Paginator
  *
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Hit
- * @uses   \Elastic\ScoutDriverPlus\Decorators\SearchResult
- * @uses   \Elastic\ScoutDriverPlus\Factories\LazyModelFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Hit
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\SearchResult
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory
  */
 final class PaginatorTest extends TestCase
 {

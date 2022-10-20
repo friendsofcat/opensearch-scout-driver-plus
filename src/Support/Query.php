@@ -1,26 +1,26 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Support;
+namespace OpenSearch\ScoutDriverPlus\Support;
 
-use Elastic\ScoutDriverPlus\Builders\BoolQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\ExistsQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\FuzzyQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\IdsQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MatchAllQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MatchNoneQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MatchPhrasePrefixQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MatchPhraseQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MatchQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\MultiMatchQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\NestedQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\PrefixQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\RangeQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\RegexpQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\TermQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\TermsQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\WildcardQueryBuilder;
 use Illuminate\Support\Traits\Macroable;
+use OpenSearch\ScoutDriverPlus\Builders\BoolQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\ExistsQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\FuzzyQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\GeoDistanceQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\IdsQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MatchAllQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MatchNoneQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MatchPhrasePrefixQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MatchPhraseQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MatchQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\MultiMatchQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\NestedQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\PrefixQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\RangeQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\RegexpQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\TermQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\TermsQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\WildcardQueryBuilder;
 
 class Query
 {

@@ -1,8 +1,8 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\QueryParameters\Validators;
+namespace OpenSearch\ScoutDriverPlus\QueryParameters\Validators;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
 
 final class CompoundValidator implements ValidatorInterface
 {

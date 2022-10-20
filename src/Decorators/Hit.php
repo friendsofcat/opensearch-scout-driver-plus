@@ -1,13 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Decorators;
+namespace OpenSearch\ScoutDriverPlus\Decorators;
 
-use Elastic\Adapter\Search\Hit as BaseHit;
-use Elastic\ScoutDriverPlus\Factories\LazyModelFactory;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection as BaseCollection;
 use Illuminate\Support\Traits\ForwardsCalls;
+use OpenSearch\Adapter\Search\Hit as BaseHit;
+use OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory;
 
 /**
  * @mixin BaseHit

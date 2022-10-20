@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration;
 
-use Elastic\Client\ServiceProvider as ElasticClientServiceProvider;
-use Elastic\Migrations\ServiceProvider as ElasticMigrationsServiceProvider;
-use Elastic\ScoutDriver\ServiceProvider as ElasticScoutDriverServiceProvider;
-use Elastic\ScoutDriverPlus\Decorators\SearchResult;
-use Elastic\ScoutDriverPlus\ServiceProvider as ElasticScoutDriverPlusServiceProvider;
 use Illuminate\Config\Repository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Laravel\Scout\ScoutServiceProvider;
+use OpenSearch\Laravel\Client\ServiceProvider as OpenSearchClientServiceProvider;
+use OpenSearch\Migrations\ServiceProvider as OpenSearchMigrationsServiceProvider;
+use OpenSearch\ScoutDriver\ServiceProvider as OpenSearchScoutDriverServiceProvider;
+use OpenSearch\ScoutDriverPlus\Decorators\SearchResult;
+use OpenSearch\ScoutDriverPlus\ServiceProvider as OpenSearchScoutDriverPlusServiceProvider;
 use Orchestra\Testbench\TestCase as TestbenchTestCase;
 
 class TestCase extends TestbenchTestCase
@@ -21,10 +21,10 @@ class TestCase extends TestbenchTestCase
     {
         return [
             ScoutServiceProvider::class,
-            ElasticClientServiceProvider::class,
-            ElasticMigrationsServiceProvider::class,
-            ElasticScoutDriverServiceProvider::class,
-            ElasticScoutDriverPlusServiceProvider::class,
+            OpenSearchClientServiceProvider::class,
+            OpenSearchMigrationsServiceProvider::class,
+            OpenSearchScoutDriverServiceProvider::class,
+            OpenSearchScoutDriverPlusServiceProvider::class,
         ];
     }
 
@@ -33,9 +33,9 @@ class TestCase extends TestbenchTestCase
         parent::getEnvironmentSetUp($app);
 
         $this->config = $app['config'];
-        $this->config->set('scout.driver', 'elastic');
-        $this->config->set('elastic.migrations.storage.default_path', dirname(__DIR__) . '/App/elastic/migrations');
-        $this->config->set('elastic.scout_driver.refresh_documents', true);
+        $this->config->set('scout.driver', 'opensearch');
+        $this->config->set('opensearch.migrations.storage.default_path', dirname(__DIR__) . '/App/opensearch/migrations');
+        $this->config->set('opensearch.scout_driver.refresh_documents', true);
     }
 
     protected function setUp(): void
@@ -46,12 +46,12 @@ class TestCase extends TestbenchTestCase
         $this->withFactories(dirname(__DIR__) . '/App/database/factories');
 
         $this->artisan('migrate')->run();
-        $this->artisan('elastic:migrate')->run();
+        $this->artisan('opensearch:migrate')->run();
     }
 
     protected function tearDown(): void
     {
-        $this->artisan('elastic:migrate:reset')->run();
+        $this->artisan('opensearch:migrate:reset')->run();
         $this->artisan('migrate:reset')->run();
 
         parent::tearDown();

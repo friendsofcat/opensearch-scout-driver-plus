@@ -1,24 +1,24 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Builders;
 
-use Elastic\Adapter\Search\SearchParameters;
-use Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder;
-use Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\Adapter\Search\SearchParameters;
+use OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder;
+use OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder
- * @covers \Elastic\ScoutDriverPlus\Exceptions\NotSearchableModelException
- * @covers \Elastic\ScoutDriverPlus\Support\Conditionable
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Exceptions\NotSearchableModelException
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Conditionable
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Engine
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Engine
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class SearchParametersBuilderTest extends TestCase
 {
@@ -558,40 +558,6 @@ final class SearchParametersBuilderTest extends TestCase
 
         $actual = (new SearchParametersBuilder(new Book()))
             ->preference('_local')
-            ->buildSearchParameters();
-
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function test_search_parameters_with_point_in_time_can_be_built(): void
-    {
-        $expected = (new SearchParameters())
-            ->pointInTime([
-                'id' => '46ToAwMDaWR5BXV1',
-                'keep_alive' => '1m',
-            ]);
-
-        $actual = (new SearchParametersBuilder(new Book()))
-            ->pointInTime('46ToAwMDaWR5BXV1', '1m')
-            ->buildSearchParameters();
-
-        $this->assertEquals($expected, $actual);
-    }
-
-    public function test_search_parameters_with_search_after_can_be_built(): void
-    {
-        $expected = (new SearchParameters())
-            ->indices([(new Book())->searchableAs()])
-            ->searchAfter([
-                '2021-05-20T05:30:04.832Z',
-                4294967298,
-            ]);
-
-        $actual = (new SearchParametersBuilder(new Book()))
-            ->searchAfter([
-                '2021-05-20T05:30:04.832Z',
-                4294967298,
-            ])
             ->buildSearchParameters();
 
         $this->assertEquals($expected, $actual);

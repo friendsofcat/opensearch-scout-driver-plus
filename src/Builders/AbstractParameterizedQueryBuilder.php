@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Transformers\ArrayTransformerInterface;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\ValidatorInterface;
-use Elastic\ScoutDriverPlus\Support\Conditionable;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\ArrayTransformerInterface;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\ValidatorInterface;
+use OpenSearch\ScoutDriverPlus\Support\Conditionable;
 
 abstract class AbstractParameterizedQueryBuilder implements QueryBuilderInterface
 {

@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\QueryParameters;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\QueryParameters;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @covers \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
  *
- * @uses   \Elastic\ScoutDriverPlus\Support\Arr
+ * @uses   \OpenSearch\ScoutDriverPlus\Support\Arr
  */
 final class ParameterCollectionTest extends TestCase
 {

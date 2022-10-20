@@ -1,18 +1,18 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Factories;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Factories;
 
-use Elastic\Adapter\Documents\Routing;
-use Elastic\ScoutDriverPlus\Factories\RoutingFactory;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\Adapter\Documents\Routing;
+use OpenSearch\ScoutDriverPlus\Factories\RoutingFactory;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Factories\RoutingFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
  *
- * @uses   \Elastic\ScoutDriverPlus\Engine
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Engine
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class RoutingFactoryTest extends TestCase
 {

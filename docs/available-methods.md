@@ -7,7 +7,6 @@
 * [join](#join)
 * [load](#load)
 * [minScore](#minscore)
-* [pointInTime](#pointintime)
 * [postFilter](#postfilter)
 * [preference](#preference)
 * [refineModels](#refinemodels)
@@ -26,7 +25,7 @@
 
 ### aggregate
 
-This method can be used to [aggregate data](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-aggregations.html) 
+This method can be used to [aggregate data](https://opensearch.org/docs/1.3/opensearch/aggregations/) 
 based on a search query;
 
 ```php
@@ -62,8 +61,7 @@ $maxPrice = $aggregations->get('max_price');
 
 ### collapse
 
-This method allows to [collapse](https://www.elastic.co/guide/en/elasticsearch/reference/current/collapse-search-results.html) 
-search results based on field values:
+This method allows to collapse search results based on field values:
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -83,7 +81,7 @@ $searchResult = Book::searchQuery($query)
 
 ### from
 
-`from` defines [the starting document offset](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html):
+`from` defines [the starting document offset](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -93,7 +91,7 @@ $searchResult = Book::searchQuery($query)
 
 ### highlight
 
-This method allows you to get [highlighted snippets](https://www.elastic.co/guide/en/elasticsearch/reference/current/highlighting.html#highlighting)
+This method allows you to get [highlighted snippets](https://opensearch.org/docs/1.3/opensearch/supported-field-types/text/)
 from one or more fields in your search results:
 
 ```php
@@ -137,7 +135,7 @@ $raw = $highlight->raw();
 
 ### join
 
-This method enables [multi indices](https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-index.html#multi-index)
+This method enables [multi indices](https://opensearch.org/docs/1.3/opensearch/rest-api/multi-search/)
 search:
 
 ```php
@@ -159,7 +157,7 @@ Note that the result collection of models includes both types:
 $models = $searchResult->models();
 ```
 
-When searching in multiple indices, you can [boost results from a specific index](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-multiple-indices.html#index-boost)
+When searching in multiple indices, you can [boost results from a specific index](https://opensearch.org/docs/1.3/opensearch/rest-api/multi-search/)
 by providing the second argument in `join` method:
 
 ```php
@@ -190,29 +188,13 @@ $searchResult = Book::searchQuery($query)
 
 ### minScore
 
-This method allows you to [set minimum score for matching documents](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html#search-api-min-score):
+This method allows you to [set minimum score for matching documents](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
     ->minScore(0.5)
     ->execute();
 ```
-
-### pointInTime
-
-`pointInTime` allows you to set a [point in time](https://www.elastic.co/guide/en/elasticsearch/reference/current/point-in-time-api.html#point-in-time-api) 
-that should be used for the search:
-
-```php
-$pit = Book::openPointInTime('1m');
-
-$searchResult = Book::searchQuery($query)
-    ->pointInTime($pit, '5m')
-    ->execute();
-```
-
-**Note**, that [join](#join), [preference](#preference) and [routing](#routing) parameters are ignored 
-when `pointInTime` is used.
 
 ### postFilter
 
@@ -238,7 +220,7 @@ $searchResult = Book::searchQuery($query)
 
 ### preference
 
-`preference` defines [nodes and shards used for the search](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html#search-search-api-query-params):
+`preference` defines [nodes and shards used for the search](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -329,26 +311,9 @@ $searchResult = Book::searchQuery($query)
     ->execute();
 ```
 
-### searchAfter
-
-You can use `searchAfter` [to retrieve the next page of hits using a set of sort values from the previous page](https://www.elastic.co/guide/en/elasticsearch/reference/current/paginate-search-results.html#search-after):
-
-```php
-$firstPage = Book::searchQuery($query)
-    ->pointInTime($pit)
-    ->execute();
-
-$searchAfter = $firstPage->hits()->last()->sort();
-
-$secondPage = Book::searchQuery($query)
-    ->pointInTime($pit)
-    ->searchAfter($searchAfter)
-    ->execute();
-```
-
 ### searchType
 
-`searchType` defines [how distributed term frequencies are calculated for relevance scoring](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html#search-search-api-query-params):
+`searchType` defines [how distributed term frequencies are calculated for relevance scoring](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -358,7 +323,7 @@ $searchResult = Book::searchQuery($query)
 
 ### size
 
-`size` method [limits the number of hits to return](https://www.elastic.co/guide/en/elasticsearch/reference/current/search-search.html):
+`size` method [limits the number of hits to return](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)

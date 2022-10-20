@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Builders;
+namespace OpenSearch\ScoutDriverPlus\Builders;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\BoostParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\CaseInsensitiveParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\FieldParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\RewriteParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Shared\ValueParameter;
-use Elastic\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer;
-use Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\BoostParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\CaseInsensitiveParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\FieldParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\RewriteParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\ValueParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator;
 
 final class WildcardQueryBuilder extends AbstractParameterizedQueryBuilder
 {

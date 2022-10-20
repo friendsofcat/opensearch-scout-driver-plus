@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Unit\QueryParameters\Transformers;
+namespace OpenSearch\ScoutDriverPlus\Tests\Unit\QueryParameters\Transformers;
 
-use Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection;
-use Elastic\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer;
+use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
+ * @covers \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
  *
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
  */
 final class FlatArrayTransformerTest extends TestCase
 {

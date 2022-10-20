@@ -1,29 +1,29 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Builders;
 
-use Elastic\ScoutDriverPlus\Builders\BoolQueryBuilder;
-use Elastic\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
-use Elastic\ScoutDriverPlus\Support\Query;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\ScoutDriverPlus\Builders\BoolQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Exceptions\QueryBuilderValidationException;
+use OpenSearch\ScoutDriverPlus\Support\Query;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 use stdClass;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Builders\BoolQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\BoolQueryBuilder
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\MatchAllQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Builders\TermQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Shared\FieldParameter
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Shared\ValueParameter
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator
- * @uses   \Elastic\ScoutDriverPlus\Support\Arr
- * @uses   \Elastic\ScoutDriverPlus\Support\Query
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\MatchAllQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\TermQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Shared\FieldParameter
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Shared\ValueParameter
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\OneOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\Support\Arr
+ * @uses   \OpenSearch\ScoutDriverPlus\Support\Query
  */
 final class BoolQueryBuilderTest extends TestCase
 {

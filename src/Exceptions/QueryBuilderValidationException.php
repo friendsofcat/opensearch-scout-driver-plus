@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Exceptions;
+namespace OpenSearch\ScoutDriverPlus\Exceptions;
 
 use RuntimeException;
 

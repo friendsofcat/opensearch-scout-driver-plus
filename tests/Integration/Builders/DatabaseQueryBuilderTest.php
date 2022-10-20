@@ -1,20 +1,20 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Builders;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Builders;
 
-use Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
 use Illuminate\Database\Eloquent\Builder;
+use OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
  *
- * @uses \Elastic\ScoutDriverPlus\Engine
- * @uses \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses \Elastic\ScoutDriverPlus\Searchable
+ * @uses \OpenSearch\ScoutDriverPlus\Engine
+ * @uses \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class DatabaseQueryBuilderTest extends TestCase
 {

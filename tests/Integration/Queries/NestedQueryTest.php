@@ -1,40 +1,40 @@
 <?php declare(strict_types=1);
 
-namespace Elastic\ScoutDriverPlus\Tests\Integration\Queries;
+namespace OpenSearch\ScoutDriverPlus\Tests\Integration\Queries;
 
-use Elastic\ScoutDriverPlus\Builders\NestedQueryBuilder;
-use Elastic\ScoutDriverPlus\Builders\TermQueryBuilder;
-use Elastic\ScoutDriverPlus\Decorators\Hit;
-use Elastic\ScoutDriverPlus\Support\Query;
-use Elastic\ScoutDriverPlus\Tests\App\Author;
-use Elastic\ScoutDriverPlus\Tests\App\Book;
-use Elastic\ScoutDriverPlus\Tests\Integration\TestCase;
+use OpenSearch\ScoutDriverPlus\Builders\NestedQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Builders\TermQueryBuilder;
+use OpenSearch\ScoutDriverPlus\Decorators\Hit;
+use OpenSearch\ScoutDriverPlus\Support\Query;
+use OpenSearch\ScoutDriverPlus\Tests\App\Author;
+use OpenSearch\ScoutDriverPlus\Tests\App\Book;
+use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
 
 /**
- * @covers \Elastic\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Builders\NestedQueryBuilder
- * @covers \Elastic\ScoutDriverPlus\Engine
- * @covers \Elastic\ScoutDriverPlus\Factories\LazyModelFactory
- * @covers \Elastic\ScoutDriverPlus\Factories\ModelFactory
- * @covers \Elastic\ScoutDriverPlus\Support\Query
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\AbstractParameterizedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Builders\NestedQueryBuilder
+ * @covers \OpenSearch\ScoutDriverPlus\Engine
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\LazyModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Factories\ModelFactory
+ * @covers \OpenSearch\ScoutDriverPlus\Support\Query
  *
- * @uses   \Elastic\ScoutDriverPlus\Builders\DatabaseQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Builders\MatchQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Builders\SearchParametersBuilder
- * @uses   \Elastic\ScoutDriverPlus\Builders\TermQueryBuilder
- * @uses   \Elastic\ScoutDriverPlus\Decorators\Hit
- * @uses   \Elastic\ScoutDriverPlus\Decorators\SearchResult
- * @uses   \Elastic\ScoutDriverPlus\Factories\DocumentFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\ParameterFactory
- * @uses   \Elastic\ScoutDriverPlus\Factories\RoutingFactory
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\ParameterCollection
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Shared\FieldParameter
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Shared\QueryStringParameter
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Shared\ValueParameter
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer
- * @uses   \Elastic\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
- * @uses   \Elastic\ScoutDriverPlus\Searchable
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\DatabaseQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\MatchQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\SearchParametersBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Builders\TermQueryBuilder
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\Hit
+ * @uses   \OpenSearch\ScoutDriverPlus\Decorators\SearchResult
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\DocumentFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\ParameterFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\Factories\RoutingFactory
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Shared\FieldParameter
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Shared\QueryStringParameter
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Shared\ValueParameter
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\FlatArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Transformers\GroupedArrayTransformer
+ * @uses   \OpenSearch\ScoutDriverPlus\QueryParameters\Validators\AllOfValidator
+ * @uses   \OpenSearch\ScoutDriverPlus\Searchable
  */
 final class NestedQueryTest extends TestCase
 {
