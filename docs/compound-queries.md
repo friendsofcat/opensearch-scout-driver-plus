@@ -4,7 +4,7 @@
 
 ## Boolean
 
-You can use `Elastic\ScoutDriverPlus\Support\Query::bool()` to build a [boolean query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#query-dsl-bool-query):
+You can use `OpenSearch\ScoutDriverPlus\Support\Query::bool()` to build a [boolean query](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/):
 
 ```php
 $query = Query::bool()->must(
@@ -28,7 +28,7 @@ Available methods:
 
 ### <a name="bool-filter"></a> filter
 
-The query defined with `filter` [must appear in the matching documents](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html),
+The query defined with `filter` [must appear in the matching documents](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/),
 but won’t contribute to the score:
 
 ```php
@@ -63,7 +63,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="bool-minimum-should-match"></a> minimumShouldMatch
 
-You can use `minimumShouldMatch` to specify [the number of `should` queries](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#bool-min-should-match)
+You can use `minimumShouldMatch` to specify [the number of `should` queries](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/)
 the documents must match:
 
 ```php
@@ -77,7 +77,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="bool-must"></a> must
 
-The query defined with `must` [must appear in the matching documents](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
+The query defined with `must` [must appear in the matching documents](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/)
 and will contribute to the score:
 
 ```php
@@ -112,7 +112,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="bool-must-not"></a> mustNot
 
-The query defined with `mustNot` [must not appear in the matching documents](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
+The query defined with `mustNot` [must not appear in the matching documents](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/)
 and won’t contribute to the score:
 
 ```php
@@ -159,7 +159,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="bool-should"></a> should
 
-The query defined with `should` [should appear in the matching documents](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html):
+The query defined with `should` [should appear in the matching documents](https://opensearch.org/docs/1.3/opensearch/query-dsl/bool/):
 
 ```php
 // you can make a query using builder

@@ -4,7 +4,7 @@
 
 ## Nested
 
-You can use `Elastic\ScoutDriverPlus\Support\Query::nested()` to build a [nested query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html#query-dsl-nested-query):
+You can use `OpenSearch\ScoutDriverPlus\Support\Query::nested()` to build a [nested query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-nested-query.html#query-dsl-nested-query):
 
 ```php
 $query = Query::nested()

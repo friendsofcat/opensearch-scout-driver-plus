@@ -1,6 +1,6 @@
-# OpenSearch Elastic Scout Driver Plus
+# OpenSearch Scout Driver Plus
 
-Extension for [Elastic Scout Driver](https://github.com/friendsofcat/opensearch-scout-driver).
+Extension for [OpenSearch Scout Driver](https://github.com/friendsofcat/opensearch-scout-driver).
 
 ## Contents
 
@@ -168,7 +168,7 @@ You can get more familiar with the `$searchResult` object and learn how to pagin
 
 ### Custom Routing
 
-If you want to use a [custom shard routing](https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-routing-field.html)
+If you want to use a [custom shard routing](https://opensearch.org/docs/1.3/opensearch/mappings/)
 for your model, override the `searchableRouting` method:
 
 ```php
