@@ -120,4 +120,24 @@ final class MatchPhraseQueryBuilderTest extends TestCase
 
         $this->assertSame($expected, $actual);
     }
+
+    public function test_query_with_field_and_text_and_boost_can_be_built(): void
+    {
+        $expected = [
+            'match_phrase' => [
+                'message' => [
+                    'query' => 'this is a test',
+                    'boost' => 2,
+                ],
+            ],
+        ];
+
+        $actual = $this->builder
+            ->field('message')
+            ->query('this is a test')
+            ->boost(2)
+            ->buildQuery();
+
+        $this->assertEquals($expected, $actual);
+    }
 }

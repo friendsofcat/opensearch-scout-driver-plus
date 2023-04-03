@@ -4,6 +4,7 @@ namespace OpenSearch\ScoutDriverPlus\Builders;
 
 use OpenSearch\ScoutDriverPlus\QueryParameters\ParameterCollection;
 use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\AnalyzerParameter;
+use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\BoostParameter;
 use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\FieldParameter;
 use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\QueryStringParameter;
 use OpenSearch\ScoutDriverPlus\QueryParameters\Shared\SlopParameter;
@@ -18,6 +19,7 @@ final class MatchPhraseQueryBuilder extends AbstractParameterizedQueryBuilder
     use SlopParameter;
     use AnalyzerParameter;
     use ZeroTermsQueryParameter;
+    use BoostParameter;
 
     protected string $type = 'match_phrase';
 
