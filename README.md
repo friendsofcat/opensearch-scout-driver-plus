@@ -32,10 +32,10 @@ OpenSearch Scout Driver Plus supports:
 
 The current version of OpenSearch Scout Driver Plus has been tested with the following configuration:
 
-* PHP 7.4-8.0
-* OpenSearch 1.x
-* Laravel 7.x-9.x
-* Laravel Scout 7.x-9.x
+* PHP 7.4-8.2
+* OpenSearch 2.x
+* Laravel 7.x-10.x
+* Laravel Scout 7.x-10.x
 
 ## Installation
 
@@ -53,8 +53,8 @@ already use OpenSearch Scout Driver, I recommend you to update it before install
 composer update friendsofcat/opensearch-scout-driver
 ```
 
-After installing the libraries, you need to add `OpenSearch\ScoutDriverPlus\Searchable` trait to your models. In case 
-some models already use the standard `Laravel\Scout\Searchable` trait, you should replace it with the one provided by 
+After installing the libraries, you need to add `OpenSearch\ScoutDriverPlus\Searchable` trait to your models. In case
+some models already use the standard `Laravel\Scout\Searchable` trait, you should replace it with the one provided by
 OpenSearch Scout Driver Plus.
 
 If you want to use OpenSearch Scout Driver Plus with [Lumen framework](https://lumen.laravel.com/)
@@ -82,12 +82,12 @@ $query = [
         'title' => [
             'query' => 'My book',
             'fuzziness' => 'AUTO'
-        ] 
+        ]
     ]
 ];
 ```
 
-Each method of `OpenSearch\ScoutDriverPlus\Support\Query` factory creates a query builder for the respective type. 
+Each method of `OpenSearch\ScoutDriverPlus\Support\Query` factory creates a query builder for the respective type.
 Available methods are listed below:
 
 * [bool](docs/compound-queries.md#boolean)
@@ -125,7 +125,7 @@ $builder = Book::searchQuery($query)
     ->sort('price', 'asc');
 ```
 
-The builder supports various search parameters and provides a number of useful helpers: 
+The builder supports various search parameters and provides a number of useful helpers:
 
 * [aggregate](docs/available-methods.md#aggregate)
 * [boostIndex](docs/available-methods.md#boostindex)
@@ -164,7 +164,7 @@ $documents = $searchResult->documents();
 $highlights = $searchResult->highlights();
 ```
 
-You can get more familiar with the `$searchResult` object and learn how to paginate the search results on [this page](docs/search-results.md).  
+You can get more familiar with the `$searchResult` object and learn how to paginate the search results on [this page](docs/search-results.md).
 
 ### Custom Routing
 
@@ -175,7 +175,7 @@ for your model, override the `searchableRouting` method:
 class Book extends Model
 {
     use OpenSearch\ScoutDriverPlus\Searchable;
-    
+
     public function searchableRouting()
     {
         return $this->user->id;
@@ -193,7 +193,7 @@ Sometimes you need to index your model with related data:
 class Book extends Model
 {
     use OpenSearch\ScoutDriverPlus\Searchable;
-    
+
     public function toSearchableArray()
     {
         return [
@@ -211,7 +211,7 @@ You can improve the performance of bulk operations by overriding the `searchable
 class Book extends Model
 {
     use OpenSearch\ScoutDriverPlus\Searchable;
-    
+
     public function toSearchableArray()
     {
         return [
@@ -220,7 +220,7 @@ class Book extends Model
             'author' => $this->author->only(['name', 'phone_number']),
         ];
     }
-    
+
     public function searchableWith()
     {
         return ['author'];
@@ -240,7 +240,7 @@ If you want to change a connection used by a model, you need to override the `se
 class Book extends Model
 {
     use OpenSearch\ScoutDriverPlus\Searchable;
-    
+
     public function searchableConnection(): ?string
     {
         return 'books';
