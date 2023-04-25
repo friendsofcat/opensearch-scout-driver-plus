@@ -25,7 +25,7 @@ final class EngineTest extends TestCase
         $this->assertEquals($target->toArray(), $found->first()->toArray());
     }
 
-    public function queueConfigProvider(): array
+    public static function queueConfigProvider(): array
     {
         return [
             [['scout.queue' => true]],
