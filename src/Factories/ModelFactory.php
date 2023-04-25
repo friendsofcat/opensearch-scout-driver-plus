@@ -26,6 +26,7 @@ class ModelFactory
             return new Collection();
         }
 
+        /** @var Collection */
         return $databaseQueryBuilder->buildQuery($documentIds)->get();
     }
 
