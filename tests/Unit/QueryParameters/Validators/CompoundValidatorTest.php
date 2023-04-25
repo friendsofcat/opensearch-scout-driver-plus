@@ -18,7 +18,7 @@ use OpenSearch\ScoutDriverPlus\Tests\Integration\TestCase;
  */
 final class CompoundValidatorTest extends TestCase
 {
-    public function invalidParametersDataProvider(): array
+    public static function invalidParametersDataProvider(): array
     {
         return [
             [['field' => 'age']],
@@ -27,7 +27,7 @@ final class CompoundValidatorTest extends TestCase
         ];
     }
 
-    public function validParametersDataProvider(): array
+    public static function validParametersDataProvider(): array
     {
         return [
             [['field' => 'age', 'gt' => 10]],

@@ -11,7 +11,7 @@ parameters:
 			path: src/Decorators/SearchResult.php
 
 		-
-			message: "#^Cannot call method searchableAs\\(\\) on mixed\\.$#"
+			message: '#Cannot call method (getScoutKey|getScoutModelsByIds|queryScoutModelsByIds|searchableAs|scoutMetadata|pushSoftDeleteMetadata|toSearchableArray)\(\) on Illuminate\\Database\\Eloquent\\Model\|null#'
 			count: 2
 			path: src/Engine.php
 
