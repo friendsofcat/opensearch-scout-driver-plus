@@ -56,6 +56,7 @@ class SearchParametersBuilder
     private ?string $searchType;
     private ?string $preference;
     private ?array $routing;
+    private ?bool $explain;
 
     public function __construct(Model $model)
     {
@@ -279,6 +280,12 @@ class SearchParametersBuilder
         return $this;
     }
 
+    public function explain(bool $explain = true): self
+    {
+        $this->explain = $explain;
+        return $this;
+    }
+
     public function buildSearchParameters(): SearchParameters
     {
         $searchParameters = new SearchParameters();
@@ -354,6 +361,10 @@ class SearchParametersBuilder
 
         if (isset($this->searchType)) {
             $searchParameters->searchType($this->searchType);
+        }
+
+        if (isset($this->explain)) {
+            $searchParameters->explain($this->explain);
         }
 
         return $searchParameters;
