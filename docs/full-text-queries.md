@@ -9,7 +9,7 @@
 
 ## Match All
 
-You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchAll()` to build a query that [matches all documents](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchAll()` to build a query that [matches all documents](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchAll();
@@ -20,7 +20,7 @@ $searchResult = Book::searchQuery($query)->execute();
 ## Match None
 
 You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchNone()` to build a query that
-[matches no documents](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+[matches no documents](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchNone();
@@ -32,7 +32,7 @@ $searchResult = Book::searchQuery($query)->execute();
 ## Match Phrase Prefix
 
 You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchPhrasePrefix()` to build a query that matches documents, which
-[contain the words of a provided text](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/) 
+[contain the words of a provided text](https://opensearch.org/docs/search-plugins/sql/full-text/) 
 in the same order as provided:
 
 ```php
@@ -54,7 +54,7 @@ Available methods:
 
 ### <a name="match-phrase-prefix-analyzer"></a> analyzer
 
-`analyzer` is used to [convert the `query` text into tokens](https://opensearch.org/docs/1.3/opensearch/query-dsl/full-text/):
+`analyzer` is used to [convert the `query` text into tokens](https://opensearch.org/docs/opensearch/query-dsl/full-text/):
 
 ```php
 $query = Query::matchPhrasePrefix()
@@ -67,7 +67,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-phrase-prefix-field"></a> field
 
-Use `field` to specify [the field you wish to search](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `field` to specify [the field you wish to search](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchPhrasePrefix()
@@ -79,7 +79,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-phrase-prefix-max-expansions"></a> maxExpansions
 
-You can use `maxExpansions` to specify [maximum number of terms to which the last provided term of the `query` value will expand](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+You can use `maxExpansions` to specify [maximum number of terms to which the last provided term of the `query` value will expand](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchPhrasePrefix()
@@ -92,7 +92,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-phrase-prefix-query"></a> query
 
-Use `query` to set [the text you wish to find in the provided `field`](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `query` to set [the text you wish to find in the provided `field`](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchPhrasePrefix()
@@ -104,7 +104,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-phrase-prefix-slop"></a> slop
 
-Use `slop` to define [the maximum number of positions allowed between matching tokens](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `slop` to define [the maximum number of positions allowed between matching tokens](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchPhrasePrefix()
@@ -117,7 +117,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-phrase-prefix-zero-terms-query"></a> zeroTermsQuery
 
-You can define [what to return in case `analyzer` removes all tokens](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/)
+You can define [what to return in case `analyzer` removes all tokens](https://opensearch.org/docs/search-plugins/sql/full-text/)
 using `zeroTermsQuery`: 
 
 ```php
@@ -131,7 +131,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ## Match Phrase
 
-You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchPhrase()` to build a query that matches documents, which [contain the given phrase](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+You can use `OpenSearch\ScoutDriverPlus\Support\Query::matchPhrase()` to build a query that matches documents, which [contain the given phrase](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::matchPhrase()
@@ -214,7 +214,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ## Match
 
-You can use `OpenSearch\ScoutDriverPlus\Support\Query::match()` to build a query that matches documents, which [contain a provided text, number, date or boolean value](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+You can use `OpenSearch\ScoutDriverPlus\Support\Query::match()` to build a query that matches documents, which [contain a provided text, number, date or boolean value](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -243,7 +243,7 @@ Available methods:
 
 ### <a name="match-analyzer"></a> analyzer
 
-`analyzer` is used to [convert the `query` text into tokens](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`analyzer` is used to [convert the `query` text into tokens](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -256,7 +256,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-auto-generate-synonyms-phrase-query"></a> autoGenerateSynonymsPhraseQuery
 
-`autoGenerateSynonymsPhraseQuery` allows you to define if match phrase queries have to be [automatically created for multi-term synonyms](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`autoGenerateSynonymsPhraseQuery` allows you to define if match phrase queries have to be [automatically created for multi-term synonyms](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -269,7 +269,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-boost"></a> boost 
 
-`boost` method allows you to [decrease or increase the relevance scores of the query](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`boost` method allows you to [decrease or increase the relevance scores of the query](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
  ```php
 $query = Query::match()
@@ -282,7 +282,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-field"></a> field
 
-Use `field` to specify [the field you wish to search](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `field` to specify [the field you wish to search](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -294,7 +294,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-fuzziness"></a> fuzziness
 
-`fuzziness` controls [maximum edit distance allowed for matching](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`fuzziness` controls [maximum edit distance allowed for matching](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -307,7 +307,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-fuzzy-rewrite"></a> fuzzyRewrite
 
-`fuzzyRewrite` is used to [rewrite the query](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`fuzzyRewrite` is used to [rewrite the query](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -320,7 +320,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-fuzzy-transpositions"></a> fuzzyTranspositions
 
-Use `fuzzyTranspositions` to allow [transpositions for two adjacent characters](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `fuzzyTranspositions` to allow [transpositions for two adjacent characters](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -334,7 +334,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-lenient"></a> lenient
 
-Use `lenient` to [ignore format-based errors](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `lenient` to [ignore format-based errors](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -347,7 +347,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-max-expansions"></a> maxExpansions
 
-You can use `maxExpansions` to specify [maximum number of terms to which the query will expand](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+You can use `maxExpansions` to specify [maximum number of terms to which the query will expand](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -360,7 +360,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-minimum-should-match"></a> minimumShouldMatch
 
-`minimumShouldMatch` defines [minimum number of clauses that must match for a document to be returned](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`minimumShouldMatch` defines [minimum number of clauses that must match for a document to be returned](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -374,7 +374,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-operator"></a> operator
 
-Use `operator` to define [the boolean logic used to interpret the `query` text](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `operator` to define [the boolean logic used to interpret the `query` text](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -387,7 +387,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-prefix-length"></a> prefixLength
 
-`prefixLength` is used to determine [the number of beginning characters left unchanged for fuzzy matching](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`prefixLength` is used to determine [the number of beginning characters left unchanged for fuzzy matching](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -401,7 +401,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-query"></a> query
 
-Use `query` to set [the text you wish to find in the provided `field`](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `query` to set [the text you wish to find in the provided `field`](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::match()
@@ -413,7 +413,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="match-zero-terms-query"></a> zeroTermsQuery
 
-You can define [what to return in case `analyzer` removes all tokens](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/)
+You can define [what to return in case `analyzer` removes all tokens](https://opensearch.org/docs/search-plugins/sql/full-text/)
 with `zeroTermsQuery`: 
 
 ```php
@@ -428,7 +428,7 @@ $searchResult = Book::searchQuery($query)->execute();
 ## Multi-Match
 
 You can use `OpenSearch\ScoutDriverPlus\Support\Query::multiMatch()` to build a query that matches documents, which
-[contain a provided text, number, date or boolean value in multiple fields](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+[contain a provided text, number, date or boolean value in multiple fields](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::multiMatch()
@@ -487,7 +487,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="multi-match-boost"></a> boost 
 
-`boost` method allows you to [decrease or increase the relevance scores of a query](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+`boost` method allows you to [decrease or increase the relevance scores of a query](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
  ```php
 $query = Query::multiMatch()
@@ -500,7 +500,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="multi-match-fields"></a> fields 
 
-Use `fields` to define [the fields you wish to search in](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `fields` to define [the fields you wish to search in](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::multiMatch()
@@ -644,7 +644,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="multi-match-tie-breaker"></a> tieBreaker 
 
-`tieBreaker` is used to increase the [relevance scores](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/)
+`tieBreaker` is used to increase the [relevance scores](https://opensearch.org/docs/search-plugins/sql/full-text/)
 of documents matching the query:
 
 ```php
@@ -658,7 +658,7 @@ $searchResult = Book::searchQuery($query)->execute();
 
 ### <a name="multi-match-type"></a> type 
 
-Use `type` to define [how the query must be executed](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/):
+Use `type` to define [how the query must be executed](https://opensearch.org/docs/search-plugins/sql/full-text/):
 
 ```php
 $query = Query::multiMatch()
@@ -669,7 +669,7 @@ $query = Query::multiMatch()
 $searchResult = Book::searchQuery($query)->execute();
 ``` 
 
-**Note** that not all available methods make sense with every type. Read [the documentation](https://opensearch.org/docs/1.3/search-plugins/sql/full-text/) carefully.
+**Note** that not all available methods make sense with every type. Read [the documentation](https://opensearch.org/docs/search-plugins/sql/full-text/) carefully.
 
 ### <a name="multi-match-zero-terms-query"></a> zeroTermsQuery 
 

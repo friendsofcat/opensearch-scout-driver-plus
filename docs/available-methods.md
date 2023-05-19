@@ -22,10 +22,11 @@
 * [trackTotalHits](#tracktotalhits)
 * [unless](#unless)
 * [when](#when)
+* [explain](#explain)
 
 ### aggregate
 
-This method can be used to [aggregate data](https://opensearch.org/docs/1.3/opensearch/aggregations/) 
+This method can be used to [aggregate data](https://opensearch.org/docs/opensearch/aggregations/) 
 based on a search query;
 
 ```php
@@ -81,7 +82,7 @@ $searchResult = Book::searchQuery($query)
 
 ### from
 
-`from` defines [the starting document offset](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
+`from` defines [the starting document offset](https://opensearch.org/docs/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -91,7 +92,7 @@ $searchResult = Book::searchQuery($query)
 
 ### highlight
 
-This method allows you to get [highlighted snippets](https://opensearch.org/docs/1.3/opensearch/supported-field-types/text/)
+This method allows you to get [highlighted snippets](https://opensearch.org/docs/opensearch/supported-field-types/text/)
 from one or more fields in your search results:
 
 ```php
@@ -135,7 +136,7 @@ $raw = $highlight->raw();
 
 ### join
 
-This method enables [multi indices](https://opensearch.org/docs/1.3/opensearch/rest-api/multi-search/)
+This method enables [multi indices](https://opensearch.org/docs/opensearch/rest-api/multi-search/)
 search:
 
 ```php
@@ -157,7 +158,7 @@ Note that the result collection of models includes both types:
 $models = $searchResult->models();
 ```
 
-When searching in multiple indices, you can [boost results from a specific index](https://opensearch.org/docs/1.3/opensearch/rest-api/multi-search/)
+When searching in multiple indices, you can [boost results from a specific index](https://opensearch.org/docs/opensearch/rest-api/multi-search/)
 by providing the second argument in `join` method:
 
 ```php
@@ -188,7 +189,7 @@ $searchResult = Book::searchQuery($query)
 
 ### minScore
 
-This method allows you to [set minimum score for matching documents](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
+This method allows you to [set minimum score for matching documents](https://opensearch.org/docs/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -220,7 +221,7 @@ $searchResult = Book::searchQuery($query)
 
 ### preference
 
-`preference` defines [nodes and shards used for the search](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
+`preference` defines [nodes and shards used for the search](https://opensearch.org/docs/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -313,7 +314,7 @@ $searchResult = Book::searchQuery($query)
 
 ### searchType
 
-`searchType` defines [how distributed term frequencies are calculated for relevance scoring](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
+`searchType` defines [how distributed term frequencies are calculated for relevance scoring](https://opensearch.org/docs/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -323,7 +324,7 @@ $searchResult = Book::searchQuery($query)
 
 ### size
 
-`size` method [limits the number of hits to return](https://opensearch.org/docs/1.3/opensearch/rest-api/search/):
+`size` method [limits the number of hits to return](https://opensearch.org/docs/opensearch/rest-api/search/):
 
 ```php
 $searchResult = Book::searchQuery($query)
@@ -484,5 +485,15 @@ $searchResult = Book::searchQuery($query)
     }, function ($builder) {
          return $builder->sort('price', 'asc');
      })
+    ->execute();
+```
+
+### explain
+
+This method can be used to [retrieve an explanation of how the relevance score (_score) is calculated for every result](https://opensearch.org/docs/api-reference/explain/):
+
+```php
+$searchResult = Book::searchQuery($query)
+    ->explain()
     ->execute();
 ```
