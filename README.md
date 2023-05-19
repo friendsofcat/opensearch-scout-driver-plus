@@ -146,6 +146,7 @@ The builder supports various search parameters and provides a number of useful h
 * [trackScores](docs/available-methods.md#trackscores)
 * [trackTotalHits](docs/available-methods.md#tracktotalhits)
 * [when](docs/available-methods.md#when)
+* [explain](docs/available-methods.md#explain)
 
 ### Search Results
 
@@ -168,7 +169,7 @@ You can get more familiar with the `$searchResult` object and learn how to pagin
 
 ### Custom Routing
 
-If you want to use a [custom shard routing](https://opensearch.org/docs/1.3/opensearch/mappings/)
+If you want to use a [custom shard routing](https://opensearch.org/docs/opensearch/mappings/)
 for your model, override the `searchableRouting` method:
 
 ```php
